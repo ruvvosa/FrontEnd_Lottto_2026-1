@@ -443,6 +443,7 @@ header h1{
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
+
     box-shadow: 0px 10px 15px -3px #0000001A;
 
 }
@@ -561,7 +562,8 @@ header h1{
     width: 1280px;
     padding: 24px 32px;
     border-top-width: 1px;
-    background-color: rgb(217, 176, 245);
+    background-color: #FAF8FF;
+    border-top: 1px solid #757575
 
 }
 
@@ -571,8 +573,27 @@ header h1{
     gap: 16px;
 }
 
+.footer-heading{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    color: #0F172A;
+}
+
+.footer-heading + p{
+    font-size: 14px;
+    line-height: 20px;
+    color: #64748B;
+}
+
 .footer-nav ul{
     display: flex;
     gap: 32px;
     list-style: none;
+}
+
+.footer-nav ul li a{
+    font-size: 14px;
+    line-height: 20px;
+    color: #64748B;
 }
