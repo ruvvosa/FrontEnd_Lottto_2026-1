@@ -5,8 +5,6 @@
     font-family: Roboto;
 }
 
-
-
 a{
     text-decoration: none;
 }
@@ -458,7 +456,7 @@ header h1{
     padding:32px 32px 167px 32px;
     gap: 24px;
     border-radius: 32px;
-    background-color: brown;
+    background-color: #F3F3FC;
 
 }
 
@@ -469,30 +467,92 @@ header h1{
     height: 28px;
 }
 
+.my-lotto p{
+    width: 166px;
+    height: 28px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    color: #191B22;
+}
+
+.circle{
+    display: flex;
+    flex-direction: column;
+    width: 42px;
+    height: 24px;
+    border-radius: 9999px;
+    padding: 4px 12px;
+    background-color: #E2E2EB;
+    color: #434653;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+
+}
+
 .display-lotto{
     width: 430px;
     height: 236px;
+    margin-top: 24px;
     padding-top: 48px;
     padding-bottom: 56px;
     border-radius: 24px;
-    border-width: 2px;
-    border-style: dashed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    border: 2px dashed rgba(195, 198, 213, 0.4);
 }
 
+.ticket{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 16px;
+    background: rgba(226, 226, 235, 1);
+
+    border-radius: 9999px;
+}
+
+.no-lotto{
+    width: 126px;
+    height: 24px;
+    margin-bottom: 4px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #191B22;
+}
+
+.recommend{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 158px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #434653;
+}
 .check-result{
     width: 430px;
     height: 60px;
+    margin-top: 24px;
     padding-top: 16px;
     padding-bottom: 16px;
     border-radius: 9999px;
-    border-width: 2px;
     display: flex;
     justify-content: center;
+    border: 2px solid #C3C6D5;
+    font-weight: 570;
+    font-size: 16px;
+    line-height: 24px;
+    color: #C3C6D5;
 }
 
 .footer{
