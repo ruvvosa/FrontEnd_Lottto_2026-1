@@ -36,10 +36,10 @@
             <section class="purchase-section">
                 <div class="selected-numbers">
                     <div class="info">
-                        <div class="heading"><h2>번호 선택</h2></div>
+                        <div class="heading"><p>번호 선택</p></div>
                         <div class="check-number"><p>번호를 6개 선택해주세요</p></div>
                     </div>
-                    <button>자동 생성</button>
+                    <button class="add-button"><img src="./img/Container.svg"></img>자동 생성</button>
                 </div>
                 
                 <div class="numbers-box">
@@ -91,24 +91,26 @@
                 </div>
                 
                 <div class="purchase-box">
-                    <div class="price box">
-                        <span class="cart"></span>
-                        <span class="price-info">
-                            <p>로또 당 가격</p>
+                    <div class="price-box">
+                        <div class="cart">
+                            <img src="./img/cart.svg"></div>
+                        <div class="price-info">
+                            <div class="price"><p>로또 당 가격</p></div>
                             <p>₩1,000</p>
 
-                        </span>
+                        </div>
                     </div>
                     <div class="purchase-form">
                         <div class="input-box">
-                            <button class="minus">-</button>
-                            <input type="number" id="amount" placeholder="1">
-                            <button class="plus">+</button>
+                            <button class="minus"><img src="./img/minus.svg"></button>
+                            <input id="amount" placeholder="1">
+                            <button class="plus"><img src="./img/plus.svg"></button>
                         </div>
                         <button class="purchase-btn">로또 1개 구매  — ₩1,000</button>
                     </div>
                 </div>
             </section>
+
             <section class="result-ticket-section">
                 <div class="result-card">
                     <div class="display-number">

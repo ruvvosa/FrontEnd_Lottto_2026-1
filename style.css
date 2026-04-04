@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Roboto;
 }
 
 
@@ -13,8 +14,25 @@ a{
 button{
     border: none;
     box-shadow: none;
+    background-color: transparent;
 }
 
+input{
+    width: 48px;
+    height: 28px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    text-align: center;
+    font-weight: 700;
+    line-height: 28px;
+    font-size: 18px;
+}
+
+input::placeholder{
+    color: #191B22;
+
+}
 
 main, .TopNavBar, .footer {
     margin-left: auto;
@@ -39,7 +57,6 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Roboto;
 }
 
 .label{
@@ -52,7 +69,6 @@ header{
     text-transform: uppercase;
     color: #705D00;
 }
-
 
 header h1{
     font-weight: 900;
@@ -81,7 +97,6 @@ header h1{
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0px 10px 40px 0px rgba(25, 27, 34, 0.06);
     backdrop-filter: blur(12px);
-    font-family: Roboto;
 }
 
 .logo{
@@ -101,16 +116,12 @@ header h1{
     list-style: none;
 }
 
-
-
 .menu-nav ul li a {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.4px;
     color: rgba(71, 85, 105, 1);
-    font-weight: 500;
-    font-family: Roboto;
-    
+    font-weight: 500;    
 }
 
 .menu-nav ul li a:focus {
@@ -125,19 +136,51 @@ header h1{
     padding: 8px 24px;
     background-color: rgba(0, 50, 125, 1);
     color: #FFFFFF;
-    font-family: Roboto;
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
     text-align: center;
     vertical-align: middle;
-
 }
 .main-Lotto{
     width: 1232px;
-    height: 999.3590087890625px;
+    height: 999px;
     gap: 32px;
     display: flex;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.heading{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -0.75px;
+    color: #191B22;
+}
+
+.check-number{
+    color: #434653;
+}
+
+.add-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 48px;
+    border-radius: 9999px;
+    padding: 12px 24px;
+    margin-top: 20px;
+    background-color: #E2E2EB;
+    color: #00327D;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    gap: 24px;
 }
 
 .numbers-box{
@@ -146,7 +189,13 @@ header h1{
     gap: 12px;
     width: 609px;
     height: 609px;
-    
+}
+
+.number-btn{
+    background-color: #FFFFFF;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
 }
 
 .numbers-box button{
@@ -167,7 +216,7 @@ header h1{
     gap: 40px;
     border-radius: 32px;
     padding: 48px;
-    background-color: blue;
+    background-color: #F3F3FC;
 
 }
 
@@ -187,14 +236,99 @@ header h1{
     border-radius: 24px;
     border-width: 1px;  
     padding:32px 24px 24px 24px;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(195, 198, 213, 0.3)
 }
 
+.price-box{
+    display: flex;
+    width: 136px;
+    height: 48px;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;    
+}
+
+.price-info{
+    display: flex;
+    flex-direction: column;
+    width: 72px;
+    height: 48px;
+    font-size: 20px;
+}
+
+.price{
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #434653;
+}
+
+.price + p {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    color: #191B22;
+
+}
+.cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #FCD400;
+}
 .purchase-form{
     display: flex;
     width: 408px;
     height: 60px;
+    align-items: center;
     gap: 16px;
 }
+
+.input-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 138px;
+    height: 50px;
+    border-radius: 9999px;
+    background-color: #F3F3FC;
+    border: 1px solid #C3C6D5;
+}
+
+.minus{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input-box button{
+    width: 40px;
+    height: 40px;
+}
+
+.purchase-btn{
+    width:254px;
+    height: 60px;
+    border-radius: 9999px;
+    padding: 16px 32px;
+    background-color: #FCD400;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    color: #6E5C00;
+    box-shadow: 0px 4px 6px -4px #705D0033;
+    box-shadow: 0px 10px 15px -3px #705D0033;
+
+}
+
+
 
 .result-ticket-section{
     display: flex;
