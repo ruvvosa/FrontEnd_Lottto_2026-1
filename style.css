@@ -346,31 +346,110 @@ header h1{
 }
 
 .display-number{
-    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    
+    background-color: #00327D;
     width: 494px;
     height: 376px;
     border-radius: 32px;
 
 }
 
+.win-number{
+    width: 79px;
+    height: 28px;
+    position: relative;
+    top: 32px;
+    left: 32px;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+}
+
 .display-numbers-box{
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    margin: auto 32px;
     justify-content: center;
     align-items: center;
 }
 
 .main-numbers{
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 304px;
+    width: 384px;
     height: 44px;
     gap: 8px;
+    margin-bottom: 40px;
 }
 
+.main-numbers span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    opacity: 50%;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    border: 2px dashed #0047AB;
+    color: #FFFFFF;        
+}
+
+#plus-sign{
+    width: 20px;
+    height: 32px;
+    border: none;
+    color: #FCD400;
+    font-weight: 900;
+    font-size: 24px;
+    opacity: 100% ;
+}
+
+#bonus-number{
+   border: 2px solid #FCD400;
+    border-style: dashed;
+    color: #FCD400;
+    
+}
+
+.display-numbers-box p{
+    width: 250px;
+    height: 28px;
+    margin-bottom: 32px;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+    color: #DBEAFE;
+
+}
+
+.display-numbers-box button{
+    width: 430px;
+    height: 56px;
+    border-radius: 9999px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: #FCD400;
+    color: #6E5C00;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+
+    box-shadow: 0px 4px 6px -4px #0000001A;
+    box-shadow: 0px 10px 15px -3px #0000001A;
+
+}
 
 
 .ticket-list{
