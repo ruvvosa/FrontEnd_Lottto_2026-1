@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main, .TopNavBar, .footer {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+main{
+    background-color: rgb(201, 248, 248);
+    width: 1280px;
+    height: 1427px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header{
+    width: 531px;
+    height: 176px;
+    gap: 16px;
+    margin-top: 40px;
+    margin-bottom: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+header h1{
+    font-family: Roboto;
+    font-weight: 900;
+    font-style: Black;
+    font-size: 96px;
+    line-height: 96px;
+    letter-spacing: -4.8px;
+    text-align: center;
+}
+
+.TopNavBar {
+    height: 72px;
+    width: 1248px;
+    padding: 16px 32px;
+    margin-top: 16px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(255, 220, 168);
+}
+
+.menu-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+}
+
+.main-Lotto{
+    width: 1232px;
+    height: 999.3590087890625px;
+    gap: 32px;
+    display: flex;
+}
+
+.numbers-box{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+    width: 609px;
+    height: 609px;
+    
+}
+
+.numbers-box button{
+   width: 76px;
+    height: 76px;
+    border-radius: 12px;
+    padding: 23px 28px;
+    top: 532.59px;
+    left: 177px;
+    border-radius: 12px;
+}
+
+.purchase-section{
+    display: flex;
+    flex-direction: column;
+    width: 705px;
+    height: 999px;
+    gap: 40px;
+    border-radius: 32px;
+    padding: 48px;
+    background-color: blue;
+
+}
+
+.selected-numbers{
+    display: flex;
+    width: 609px;
+    height: 68px;
+    justify-content: space-between;
+}
+
+.purchase-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 609px;
+    height: 118px;
+    border-radius: 24px;
+    border-width: 1px;  
+    padding:32px 24px 24px 24px;
+}
+
+.purchase-form{
+    display: flex;
+    width: 408px;
+    height: 60px;
+    gap: 16px;
+}
+
+.result-ticket-section{
+    display: flex;
+    flex-direction: column;
+    width: 494px;
+    height: 999px;
+    left: 737px;
+
+}
+
+.result-card{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.display-number{
+    background-color: blueviolet;
+    width: 494px;
+    height: 376px;
+    border-radius: 32px;
+
+}
+
+.display-numbers-box{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-numbers{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 304px;
+    height: 44px;
+    gap: 8px;
+}
+
+
+
+.ticket-list{
+    width: 494px;
+    height: 571px;  
+    padding:32px 32px 167px 32px;
+    gap: 24px;
+    border-radius: 32px;
+    background-color: brown;
+
+}
+
+.my-lotto{
+    display: flex;
+    justify-content: space-between;
+    width: 430px;
+    height: 28px;
+}
+
+.display-lotto{
+    width: 430px;
+    height: 236px;
+    padding-top: 48px;
+    padding-bottom: 56px;
+    border-radius: 24px;
+    border-width: 2px;
+    border-style: dashed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.check-result{
+    width: 430px;
+    height: 60px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-radius: 9999px;
+    border-width: 2px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer{
+    height: 112px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1280px;
+    padding: 24px 32px;
+    border-top-width: 1px;
+    background-color: rgb(217, 176, 245);
+
+}
+
+.footer-content{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-nav ul{
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
