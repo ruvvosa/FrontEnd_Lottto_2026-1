@@ -40,3 +40,15 @@ function ranking(winNumbers, myNumbers) {
 
 }
 
+//4. 당첨 금액 계산 함수 구현
+function prizeMoney(rank) {
+    switch(rank) {
+        case 1: return 2000000000; 
+        case 2: return 500000000; 
+        case 3: return 10000000; 
+        case 4: return 500000; 
+        case 5: return 5000;
+        default: return 0;
+    }
+}
+
