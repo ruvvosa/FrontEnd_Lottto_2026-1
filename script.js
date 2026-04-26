@@ -1,8 +1,8 @@
 // 1. 로또 가격 계산 JS 함수 구현
 
 const TicketPrice = 1000;
-function priceCalculate(TicketPrice, quanity) {
-    return TicketPrice * quanity;
+function priceCalculate(TicketPrice, quantity) {
+    return TicketPrice * quantity;
 }
 
 //2. 당첨 번호 생성, 자동 번호 선택 JS 함수 구현
@@ -39,6 +39,8 @@ function ranking(winNumbers, myNumbers) {
 }
 
 //4. 당첨 금액 계산 함수 구현
+
+// 당첨 금액 계산
 function prizeMoney(rank) {
     switch(rank) {
         case 1: return 2000000000; 
@@ -52,14 +54,27 @@ function prizeMoney(rank) {
 
 //실행
 
-const quanity = 5;
-const myTickets = Array.from({length:quanity},()=> generateRandomNumbers(6)); //로또 5장 뽑음
+const quantity = 5;
+const myTickets = Array.from({length:quantity},()=> generateRandomNumbers(6)); //로또 5장 뽑음
 const ranks = myTickets.map(ticket => ranking(winNumbers,ticket)); // 각 장의 등수
-const totalPrize = ranks.reduce((sum,rank)=> sum + prizeMoney(rank),0); //아 육회 먹고싶다
 
-console.log(`당첨 번호: ${winNumbers.slice(0,6)} 당첨 번호 ${winNumbers[6]}`);
-console.log(`구매 금액 ${priceCalculate(TicketPrice, quanity)}원`);
+// 등수별 당첨 수
+const rankCount = {
+    1: ranks.filter(rank => rank === 1).length,
+    2: ranks.filter(rank => rank === 2).length,
+    3: ranks.filter(rank => rank === 3).length,
+    4: ranks.filter(rank => rank === 4).length,
+    5: ranks.filter(rank => rank === 5).length,
+}
+
+// 총 당첨금 계산
+
+const totalPrize = Object.entries(rankCount).reduce((sum,[rank,count])=>sum+prizeMoney(Number(rank)) * count,0);
+
+console.log(`당첨 번호: ${winNumbers.slice(0,6)} 보너스 ${winNumbers[6]}`);
+console.log(`구매 금액 ${priceCalculate(TicketPrice, quantity)}원`);
 console.log(`당첨 등수 ${ranks}`);
+console.log(`등수별 당첨 수 1등: ${rankCount[1]}장 2등: ${rankCount[2]}장 3등: ${rankCount[3]}장 4등: ${rankCount[4]}장 5등: ${rankCount[5]}장`);
 console.log(`총 당첨금 ${totalPrize}원`);
 
 
