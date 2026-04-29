@@ -73,7 +73,7 @@ const rankCount = {
 const totalPrize = Object.entries(rankCount).reduce((sum,[rank,count])=>sum+prizeMoney(Number(rank)) * count,0);
 
 console.log(`당첨 번호: ${winNumbers.slice(0,6)} 보너스 ${winNumbers[6]}`);
-console.log(`구매 금액 ${priceCalculate(TicketPrice, quantity)}원`);
+console.log(`구매 금액 ${priceCalculate(TICKET_PRICE, quantity)}원`);
 console.log(`당첨 등수 ${ranks}`);
 console.log(`등수별 당첨 수 1등: ${rankCount[1]}장 2등: ${rankCount[2]}장 3등: ${rankCount[3]}장 4등: ${rankCount[4]}장 5등: ${rankCount[5]}장`);
 console.log(`총 당첨금 ${totalPrize}원`);
