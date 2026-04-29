@@ -1,8 +1,9 @@
 // 1. 로또 가격 계산 JS 함수 구현
 
-const TicketPrice = 1000;
-function priceCalculate(TicketPrice, quantity) {
-    return TicketPrice * quantity;
+const TICKET_PRICE = 1000;
+
+function priceCalculate(quantity) {
+    return TICKET_PRICE * quantity;
 }
 
 //2. 당첨 번호 생성, 자동 번호 선택 JS 함수 구현
