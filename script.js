@@ -84,9 +84,9 @@ const plusBtn = document.querySelector(".plus");
 const minusBtn = document.querySelector(".minus");
 const amount = document.querySelector("#amount");
 const purchaseBtn = document.querySelector(".purchase-btn");
-console.log(plusBtn);
 
 
+// 구매 수량 조절 및 구매 버튼 텍스트 업데이트
 function setAmount(isPlus){
     if(isPlus){
         amount.value++;
@@ -105,6 +105,7 @@ plusBtn.addEventListener("click",()=> {
 
 minusBtn.addEventListener("click", ()=>setAmount());
 
+
 function formatCurrency(value){
     return `₩${value.toLocaleString("ko-KR")}`;
 }
@@ -114,11 +115,8 @@ const addBtn = document.querySelector(".add-num");
 const mainNum = document.querySelector(".main-numbers");
 const bounsNum = document.querySelector("#bonus-number");
 
-console.log(mainNum.childNodes[1].textContent);
-addBtn.addEventListener("click",()=> {
-    randomNum()
-});
 
+// 당첨 번호 생성 및 화면에 표시
 function randomNum (){
     const newNumbers = generateRandomNumbers(7);
     newNumbers.forEach((num,index)=>{
