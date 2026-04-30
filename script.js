@@ -72,11 +72,66 @@ const rankCount = {
 
 const totalPrize = Object.entries(rankCount).reduce((sum,[rank,count])=>sum+prizeMoney(Number(rank)) * count,0);
 
-console.log(`당첨 번호: ${winNumbers.slice(0,6)} 보너스 ${winNumbers[6]}`);
-console.log(`구매 금액 ${priceCalculate(TICKET_PRICE, quantity)}원`);
-console.log(`당첨 등수 ${ranks}`);
-console.log(`등수별 당첨 수 1등: ${rankCount[1]}장 2등: ${rankCount[2]}장 3등: ${rankCount[3]}장 4등: ${rankCount[4]}장 5등: ${rankCount[5]}장`);
-console.log(`총 당첨금 ${totalPrize}원`);
+// console.log(`당첨 번호: ${winNumbers.slice(0,6)} 보너스 ${winNumbers[6]}`);
+// console.log(`구매 금액 ${priceCalculate(TICKET_PRICE, quantity)}원`);
+// console.log(`당첨 등수 ${ranks}`);
+// console.log(`등수별 당첨 수 1등: ${rankCount[1]}장 2등: ${rankCount[2]}장 3등: ${rankCount[3]}장 4등: ${rankCount[4]}장 5등: ${rankCount[5]}장`);
+// console.log(`총 당첨금 ${totalPrize}원`);
+
+
+
+const plusBtn = document.querySelector(".plus");
+const minusBtn = document.querySelector(".minus");
+const amount = document.querySelector("#amount");
+const purchaseBtn = document.querySelector(".purchase-btn");
+console.log(plusBtn);
+
+
+function setAmount(isPlus){
+    if(isPlus){
+        amount.value++;
+        
+    }
+    else{
+        amount.value--;
+        
+    }
+    purchaseBtn.textContent = `로또 ${amount.value}개 구매 - ${formatCurrency(priceCalculate(amount.value))}`
+}
+
+plusBtn.addEventListener("click",()=> {
+    setAmount(true);
+});
+
+minusBtn.addEventListener("click", ()=>setAmount());
+
+function formatCurrency(value){
+    return `₩${value.toLocaleString("ko-KR")}`;
+}
+purchaseBtn.textContent = `로또 ${amount.value}개 구매 - ${formatCurrency(priceCalculate(amount.value))}`
+
+const addBtn = document.querySelector(".add-num");
+const mainNum = document.querySelector(".main-numbers");
+const bounsNum = document.querySelector("#bonus-number");
+
+console.log(mainNum.childNodes[1].textContent);
+addBtn.addEventListener("click",()=> {
+    randomNum()
+});
+
+function randomNum (){
+    const newNumbers = generateRandomNumbers(7);
+    newNumbers.forEach((num,index)=>{
+        if(index<6){
+            mainNum.childNodes[index*2+1].textContent= num;
+
+        }
+        else{
+           bounsNum.textContent = num;
+        }
+        
+    })
+}
 
 
 
