@@ -195,6 +195,11 @@ header h1{
     line-height: 28px;
 }
 
+.number-btn.selected {
+    background-color: #00327D;
+    color: white;
+}
+
 .numbers-box button{
    width: 76px;
     height: 76px;

@@ -130,6 +130,23 @@ function randomNum (){
         
     })
 }
+addBtn.addEventListener("click", randomNum);
+
+
+// 자동 생성 버튼 클릭 시 6개의 버튼 활성화
+const addNumBtn = document.querySelector(".add-button");
+const numBtn = document.querySelectorAll(".number-btn");
+
+addNumBtn.addEventListener("click",()=>{
+    numBtn.forEach(btn=>btn.classList.remove("selected"));
+    const selected = generateRandomNumbers(6);
+    numBtn.forEach(num =>{
+        if(selected.includes(Number(num.textContent)))
+            num.classList.add("selected");
+    })
+})
+
+
 
 
 
