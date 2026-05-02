@@ -148,6 +148,37 @@ addNumBtn.addEventListener("click",()=>{
     })
 })
 
+//로또 구매 버튼 클릭 시 우측 내 로또에 로또 카드 생성
+const lotto = document.querySelector(".display-lotto");
+const lottoElement = document.querySelector(".init-element");
+let countDisplay = document.querySelector(".circle");
+const checkResultBtn = document.querySelector(".check-result");
+let ticketCount = 0;    
+purchaseBtn.addEventListener("click",()=>{
+    const count = Number(amount.value);
+        lottoElement.style.display="none"
+        lotto.style.border="none";
+        checkResultBtn.classList.add("check");
+
+    for(let i = 0; i< count;i++){
+        ticketCount++;
+        const numbers = generateRandomNumbers(6)
+        const numStr = numbers.join("•");
+        
+        const ticketCard = document.createElement("div");
+        ticketCard.className = "my-lotto-list";
+        ticketCard.innerHTML = `
+        <div>
+        <p>로또 #${ticketCount}</p>
+        <p>${numStr}</p>
+        </div>
+        <span><img src="./img/Icon.svg"></span>
+        
+        `;
+        countDisplay.textContent = `${ticketCount}개`;
+        lotto.append(ticketCard);
+    }
+})
 
 
 
