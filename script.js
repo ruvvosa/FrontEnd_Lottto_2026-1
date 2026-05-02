@@ -86,13 +86,15 @@ const amount = document.querySelector("#amount");
 const purchaseBtn = document.querySelector(".purchase-btn");
 
 
+
+
 // 구매 수량 조절 및 구매 버튼 텍스트 업데이트
 function setAmount(isPlus){
     if(isPlus){
         amount.value++;
         
     }
-    else{
+    else if(amount.value > 1){
         amount.value--;
         
     }
