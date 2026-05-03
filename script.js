@@ -55,22 +55,13 @@ function prizeMoney(rank) {
 
 //실행
 
-const quantity = 5;
-const myTickets = Array.from({length:quantity},()=> generateRandomNumbers(6)); //로또 5장 뽑음
-const ranks = myTickets.map(ticket => ranking(winNumbers,ticket)); // 각 장의 등수
-
-// 등수별 당첨 수
-const rankCount = {
-    1: ranks.filter(rank => rank === 1).length,
-    2: ranks.filter(rank => rank === 2).length,
-    3: ranks.filter(rank => rank === 3).length,
-    4: ranks.filter(rank => rank === 4).length,
-    5: ranks.filter(rank => rank === 5).length,
-}
+// const quantity = 5;
+// const myTickets = Array.from({length:quantity},()=> generateRandomNumbers(6)); //로또 5장 뽑음
+// const ranks = myTickets.map(ticket => ranking(winNumbers,ticket)); // 각 장의 등수
 
 // 총 당첨금 계산
 
-const totalPrize = Object.entries(rankCount).reduce((sum,[rank,count])=>sum+prizeMoney(Number(rank)) * count,0);
+// const totalPrize = Object.entries(rankCount).reduce((sum,[rank,count])=>sum+prizeMoney(Number(rank)) * count,0);
 
 // console.log(`당첨 번호: ${winNumbers.slice(0,6)} 보너스 ${winNumbers[6]}`);
 // console.log(`구매 금액 ${priceCalculate(TICKET_PRICE, quantity)}원`);
@@ -121,13 +112,21 @@ const bounsNum = document.querySelector("#bonus-number");
 // 당첨 번호 생성 및 화면에 표시
 function randomNum (){
     const newNumbers = generateRandomNumbers(7);
+    const spans = mainNum.children;
     newNumbers.forEach((num,index)=>{
         if(index<6){
             mainNum.childNodes[index*2+1].textContent= num;
-
+            spans[index].style.backgroundColor = "#FFFFFF";
+            spans[index].style.border = "none";
+            spans[index].style.color = "#00327D";
+            spans[index].style.opacity = "100%";
         }
         else{
            bounsNum.textContent = num;
+           bounsNum.style.backgroundColor = "#FCD400";
+           bounsNum.style.border = "none";
+           bounsNum.style.color = "#6E5C00";
+           bounsNum.style.opacity = "100%";
         }
         
     })
@@ -154,6 +153,8 @@ const lottoElement = document.querySelector(".init-element");
 let countDisplay = document.querySelector(".circle");
 const checkResultBtn = document.querySelector(".check-result");
 let ticketCount = 0;    
+const myTickets =[];
+
 purchaseBtn.addEventListener("click",()=>{
     const count = Number(amount.value);
         lottoElement.style.display="none"
@@ -162,7 +163,8 @@ purchaseBtn.addEventListener("click",()=>{
 
     for(let i = 0; i< count;i++){
         ticketCount++;
-        const numbers = generateRandomNumbers(6)
+        const numbers = generateRandomNumbers(6);
+            myTickets.push(numbers);
         const numStr = numbers.join("•");
         
         const ticketCard = document.createElement("div");
@@ -179,6 +181,57 @@ purchaseBtn.addEventListener("click",()=>{
         lotto.append(ticketCard);
     }
 })
+
+//당첨 결과 확인
+const modal = document.querySelector(".modal");
+const resultBtn = document.querySelector(".check-result");
+const closeBtn = document.querySelector(".close-btn");
+
+
+resultBtn.addEventListener("click",()=>{
+    if(ticketCount >0){
+        
+        const ranks =myTickets.map(ticket => ranking(winNumbers,ticket));
+        const rankCount = {
+        1: ranks.filter(rank => rank === 1).length,
+        2: ranks.filter(rank => rank === 2).length,
+        3: ranks.filter(rank => rank === 3).length,
+        4: ranks.filter(rank => rank === 4).length,
+        5: ranks.filter(rank => rank === 5).length,
+        }   
+
+        const tbodyData = [
+            { rank: 1, match: "숫자 6개" },
+            { rank: 2, match: "숫자 5개 + 보너스" },
+            { rank: 3, match: "숫자 5개" },
+            { rank: 4, match: "숫자 4개" },
+            { rank: 5, match: "숫자 3개" },
+        ];
+
+        
+        const tbody = document.querySelector("tbody");
+        tbody.innerHTML = ""; //기존 내용 초기화
+        tbodyData.forEach(element =>{
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+            <td class ="rank">${element.rank}등</td>
+            <td class="match">${element.match}</td>
+            <td class="count">${rankCount[element.rank]}</td>
+            <td class="prize">${formatCurrency(prizeMoney(element.rank) * rankCount[element.rank])}</td>
+            `;
+            tbody.append(tr);
+        })
+        const totalPrize = Object.entries(rankCount).reduce((sum,[rank,count])=>sum+prizeMoney(Number(rank)) * count,0);
+        document.querySelector(".total-win-summary p:last-child").textContent = formatCurrency(totalPrize);
+
+
+        modal.style.display = "flex";
+
+    }
+})
+
+closeBtn.addEventListener("click",()=>modal.style.display="none")
+
 
 
 
