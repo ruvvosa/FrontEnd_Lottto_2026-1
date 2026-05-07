@@ -510,6 +510,12 @@ header h1{
     justify-content: center;
     align-items: center;
     border: 2px dashed rgba(195, 198, 213, 0.4);
+    overflow: auto;
+    -ms-overflow-style: none;
+}
+
+.display-lotto::-webkit-scrollbar {
+    display: none;
 }
 
 .init-element {

@@ -233,7 +233,3 @@ resultBtn.addEventListener("click",()=>{
 closeBtn.addEventListener("click",()=>modal.style.display="none")
 
 
-
-
-
-
