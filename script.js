@@ -17,7 +17,7 @@ function generateRandomNumbers(count = 6) {
     return [...winNum];
 }
 
-const winNumbers = generateRandomNumbers(7);
+let winNumbers = generateRandomNumbers(7);
 const myNumbers = generateRandomNumbers(6);
 
 
@@ -112,6 +112,7 @@ const bounsNum = document.querySelector("#bonus-number");
 // 당첨 번호 생성 및 화면에 표시
 function randomNum (){
     const newNumbers = generateRandomNumbers(7);
+    winNumbers = newNumbers;
     const spans = mainNum.children;
     newNumbers.forEach((num,index)=>{
         if(index<6){
